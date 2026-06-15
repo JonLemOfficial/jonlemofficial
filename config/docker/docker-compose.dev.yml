@@ -1,0 +1,22 @@
+version: '3.8'
+
+services:
+  web:
+    # Use context to point to the root directory for building
+    build:
+      container_name: "jonlemofficial-dev"
+      context: ../../
+      dockerfile: config/docker/Dockerfile.dev
+    ports:
+      - "3000:3000"
+    volumes:
+      # Mount the project root into /app to enable hot-reloading
+      - ../../:/app
+      # Create anonymous volumes for node_modules and .next so they don't get overwritten by the host machine
+      - /app/node_modules
+      - /app/.next
+    environment:
+      - NODE_ENV=development
+      - PORT=3000
+    restart: unless-stopped
+    # If you use a database, you can define it here as another service and link it

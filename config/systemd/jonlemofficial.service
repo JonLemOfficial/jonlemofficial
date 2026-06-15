@@ -1,0 +1,31 @@
+[Unit]
+Description=Jonathan Lemos Official Portfolio Next.js App
+After=network.target
+
+[Service]
+Type=simple
+User=www-data
+Group=www-data
+
+# Path to the application root
+WorkingDirectory=/var/www/jonlemofficial
+
+# Environment variables
+Environment=NODE_ENV=production
+Environment=PORT=3000
+
+# Executable command to start Next.js
+# Adjust the path to 'yarn' or 'npm' depending on your system's global binaries
+ExecStart=/usr/bin/yarn next:start
+
+# Restart policy for high availability
+Restart=on-failure
+RestartSec=10
+
+# Logging
+StandardOutput=syslog
+StandardError=syslog
+SyslogIdentifier=jonlemofficial
+
+[Install]
+WantedBy=multi-user.target
