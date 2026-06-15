@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="./public/assets/img/avatar.png" alt="Jonathan Lemos - Avatar picture"/>
+  <img src="./public/assets/img/avatar.png" alt="Jonathan Lemos - Avatar picture" width="256" height="256"/>
   <h1>Jonathan Lemos</h1>
   <p>
     <strong>Frontend Web, Wordpress Developer and SEO Specialist</strong><br/>
